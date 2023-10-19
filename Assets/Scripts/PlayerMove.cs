@@ -39,7 +39,9 @@ public class PlayerMove : MonoBehaviour
 
         if(isGrounded && velocity.y < 0)
         {
-            // stops non-stop velocity buildup
+            // stops non-stop velocity buildup :)
+            //cus' that's bad
+
             velocity.y = -2f;
         }
 
