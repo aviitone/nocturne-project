@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+    //dani's code for reference
+
     //Camera but Better
     public float sensX;
     public float sensY;
@@ -216,7 +218,6 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    /// <summary>
     /// Find the velocity relative to where the player is looking
     /// Useful for vectors calculations regarding movement and limiting movement
     /// </summary>

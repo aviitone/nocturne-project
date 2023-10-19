@@ -74,19 +74,12 @@ public class PlayerMove : MonoBehaviour
         //CROUCH
         if(Input.GetButtonDown("Crouch") && isGrounded)
         {
-            Debug.Log("Croughhhh");
+            Debug.Log("Crouch");
             Crouch();
         }
         if (Input.GetButtonUp("Crouch") && isGrounded)
         {
             transform.localScale = new Vector3(1, 2, 1);
-        }
-
-        //E
-        if (Input.GetButtonDown("Interact"))
-        {
-            Debug.Log("E!!");
-            Use();
         }
 
         //SPRINT
@@ -104,10 +97,5 @@ public class PlayerMove : MonoBehaviour
     private void Crouch()
     {
         transform.localScale = new Vector3(1, 1, 1);
-    }
-
-    private void Use()
-    {
-        //temp
     }
 }
