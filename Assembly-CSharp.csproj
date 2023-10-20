@@ -75,6 +75,9 @@
     <Compile Include="Assets\Scripts\deni\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Interactions.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\PlayerInteractions.cs" />
+    <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\BetterBeanCube.cs" />
+    <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\MoistDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
