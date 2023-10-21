@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slideable
   - Enemy
+  - PhysObj
   layers:
   - Default
   - TransparentFX
