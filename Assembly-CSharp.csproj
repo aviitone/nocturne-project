@@ -59,11 +59,12 @@
     <Compile Include="Assets\Scripts\CameraMoveThing.cs" />
     <Compile Include="Assets\Scripts\Portals\PortalCamera.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
+    <Compile Include="Assets\PortalTeleport.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\MoistDoor.cs" />
-    <Compile Include="Assets\Scripts\PickupControl.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\PlayerCamm.cs" />
     <Compile Include="Assets\Scripts\deni\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Portals\PortalTexture.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\BetterBeanCube.cs" />
@@ -80,8 +81,7 @@
     <Compile Include="Assets\Scripts\deni\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Interactions.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Scripts\Portals\PortalTexture.cs" />
-    <Compile Include="Assets\PortalTeleport.cs" />
+    <Compile Include="Assets\Scripts\PickupScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

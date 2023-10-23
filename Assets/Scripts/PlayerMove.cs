@@ -18,6 +18,8 @@ public class PlayerMove : MonoBehaviour
 
     public double height = 1.4f;
 
+    private float JumpLock;
+
     [SerializeField] public float slideForce;
 
     [SerializeField] public float sprintSpeed = 2f;
@@ -31,6 +33,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         transform.localScale = new Vector3(1, 2, 1);
+        JumpLock = 0;
     }
     private void Update()
     {
@@ -60,8 +63,8 @@ public class PlayerMove : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
         }
 
-        //JUMP
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        //JUMP (TURNED OFF RIGHT NOW)
+        if(Input.GetButtonDown("Jump") && isGrounded && JumpLock == 1)
         {
             Debug.Log("jump!!");
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -70,17 +73,6 @@ public class PlayerMove : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-
-        //CROUCH
-        if(Input.GetButtonDown("Crouch") && isGrounded)
-        {
-            Debug.Log("Crouch");
-            Crouch();
-        }
-        if (Input.GetButtonUp("Crouch") && isGrounded)
-        {
-            transform.localScale = new Vector3(1, 2, 1);
-        }
 
         //SPRINT
         if (Input.GetKey(KeyCode.LeftShift))
