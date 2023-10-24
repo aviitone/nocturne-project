@@ -8,15 +8,18 @@ public class PickupScript : MonoBehaviour
     [Header("Var Stuff :)")]
     [SerializeField] private LayerMask HandMask;
     [SerializeField] private Camera PlrCam;
-    [SerializeField] private Transform HandTarget;
+    [SerializeField] public Transform HandTarget;
     [Space]
     [SerializeField] private float PickupRange;
 
     private Rigidbody CurrentObj;
     private bool IsHolding;
+
+    private Rigidbody rb;
     private void Start()
     {
         IsHolding = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -39,9 +42,25 @@ public class PickupScript : MonoBehaviour
                 CurrentObj = Hitinfo.rigidbody;
                 if (CurrentObj != null)
                 {
-                    GameObject hitObject = Hitinfo.transform.gameObject;
-                    Debug.Log("Hit object name" + hitObject.name);
-                    CurrentObj.useGravity = false;
+                    if (CompareTag("HandTarget"))
+                    {
+                        // Stop the cube from moving
+                        rb.velocity = Vector3.zero;
+
+                        // Parent the object to the HandTarget
+                        transform.SetParent(HandTarget);
+
+                        // Optionally, you can reset the object's position
+                        transform.localPosition = Vector3.zero;
+
+                        // Optionally, you can reset the object's position and rotation
+                        transform.localPosition = Vector3.zero;
+                        transform.localRotation = Quaternion.identity;
+
+                        GameObject hitObject = Hitinfo.transform.gameObject;
+                        Debug.Log("Hit object name" + hitObject.name);
+                        CurrentObj.useGravity = false;
+                    }
                 }
             }
         }
@@ -53,15 +72,18 @@ public class PickupScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(CurrentObj)
+        if (CurrentObj)
         {
             Vector3 DirectionToPoint = HandTarget.position - CurrentObj.position;
             float DistanceToPoint = DirectionToPoint.magnitude;
 
-            CurrentObj.velocity = -DirectionToPoint.normalized * 0.1f * DistanceToPoint;
-            CurrentObj.transform.LookAt(HandTarget);
+            // Apply a force towards the hand target
+            CurrentObj.AddForce(DirectionToPoint.normalized * 1000f, ForceMode.Force);
 
-            CurrentObj.velocity = CurrentObj.transform.forward * 5f;
+            // Adjust the rotation to face the hand target
+            Quaternion targetRotation = Quaternion.LookRotation(DirectionToPoint, Vector3.up);
+            CurrentObj.MoveRotation(Quaternion.RotateTowards(CurrentObj.rotation, targetRotation, 10f));
         }
     }
 }
+

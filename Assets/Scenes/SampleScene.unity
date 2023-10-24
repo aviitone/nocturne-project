@@ -250,11 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167f98b833763da4ba0a3c0c67700c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdArea: {fileID: 0}
-  heldObj: {fileID: 0}
-  heldObjRB: {fileID: 0}
-  pickupRange: 5
-  pickForce: 100
 --- !u!114 &16324928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3228,11 +3223,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1268605881 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4607768602928313313, guid: 82a3c0c025040f04f811e9ca42357e07, type: 3}
-  m_PrefabInstance: {fileID: 1449283161}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1376996368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,29 +3591,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4607768602928313318, guid: 82a3c0c025040f04f811e9ca42357e07, type: 3}
   m_PrefabInstance: {fileID: 1449283161}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1449283165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4607768603353252360, guid: 82a3c0c025040f04f811e9ca42357e07, type: 3}
-  m_PrefabInstance: {fileID: 1449283161}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1449283166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449283165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc5073521f6eaa46aa2f69bd8644807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HandMask:
-    serializedVersion: 2
-    m_Bits: 8
-  PlrCam: {fileID: 1268605881}
-  HandTarget: {fileID: 1823311448}
-  PickupRange: 5
 --- !u!114 &1449283169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3701,6 +3668,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1449283173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449283162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c4509cf94e821439b5e1d81fa462a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459180722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,6 +4525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823311448}
+  - component: {fileID: 1823311449}
   m_Layer: 0
   m_Name: HandPoint
   m_TagString: Untagged
@@ -4568,6 +4548,19 @@ Transform:
   m_Father: {fileID: 1449283164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1823311449
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823311447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1836207833
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,7 +5577,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &2091010820
 GameObject:
   m_ObjectHideFlags: 0

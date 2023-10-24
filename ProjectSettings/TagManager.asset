@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PhysObj
   - Pickup
+  - HandTarget
   layers:
   - Default
   - TransparentFX
