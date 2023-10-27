@@ -61,6 +61,7 @@
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\PickupScript.cs" />
     <Compile Include="Assets\PortalTeleport.cs" />
+    <Compile Include="Assets\Scripts\ObjectGrabber.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\MoistDoor.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\PlayerCamm.cs" />
@@ -77,13 +78,12 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\Scripts\Interacts\CubeTest.cs" />
+    <Compile Include="Assets\Scripts\Parents.cs" />
     <Compile Include="Assets\Scripts\Interacts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\deni\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Interactions.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Scripts\ObjectGrabber.cs" />
-    <Compile Include="Assets\Scripts\Parents.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
