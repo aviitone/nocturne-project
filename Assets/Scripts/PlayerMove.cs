@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    private float moveSpeed = 5f;
+
     public double height = 1.4f;
 
     private float JumpLock;
@@ -24,9 +26,6 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] public float sprintSpeed = 2f;
     public bool isSprinting = false;
-
-    [Header("Other Stuff")]
-    public GravityController gravityController; // Reference to the Gravity script
 
     Vector3 velocity;
     bool isGrounded;
@@ -37,7 +36,6 @@ public class PlayerMove : MonoBehaviour
     {
         transform.localScale = new Vector3(1, 2, 1);
         JumpLock = 0;
-        gravity = gravityController.value;
     }
     private void Update()
     {
@@ -90,8 +88,11 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void Crouch()
+    private void FixedUpdate()
     {
-        transform.localScale = new Vector3(1, 1, 1);
+        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        moveDirection = Vector3.ClampMagnitude(moveDirection, 1f);
+
+        rb.AddForce(moveDirection * moveSpeed, ForceMode.Acceleration);
     }
 }
