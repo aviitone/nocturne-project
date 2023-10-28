@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Slideable
-  - Enemy
-  - PhysObj
   - Pickup
-  - HandTarget
+  - OBJ
   layers:
   - Default
   - TransparentFX

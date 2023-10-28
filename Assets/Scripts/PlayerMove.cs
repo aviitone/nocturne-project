@@ -25,6 +25,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float sprintSpeed = 2f;
     public bool isSprinting = false;
 
+    [Header("Other Stuff")]
+    public GravityController gravityController; // Reference to the Gravity script
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -34,6 +37,7 @@ public class PlayerMove : MonoBehaviour
     {
         transform.localScale = new Vector3(1, 2, 1);
         JumpLock = 0;
+        gravity = gravityController.value;
     }
     private void Update()
     {
