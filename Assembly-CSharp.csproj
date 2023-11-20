@@ -56,7 +56,6 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraMoveThing.cs" />
     <Compile Include="Assets\Scripts\Portals\PortalCamera.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\PickupScript.cs" />
@@ -64,26 +63,23 @@
     <Compile Include="Assets\Scripts\ObjectGrabber.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\MoistDoor.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\PlayerInteractions.cs" />
-    <Compile Include="Assets\Scripts\PlayerCamm.cs" />
-    <Compile Include="Assets\Scripts\deni\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Portals\PortalTexture.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\BetterBeanCube.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\PlayerCamm2.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Scripts\Combat\GunSystem.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\Scripts\Interacts\CubeTest.cs" />
     <Compile Include="Assets\Scripts\Parents.cs" />
     <Compile Include="Assets\Scripts\Interacts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerInteract.cs" />
-    <Compile Include="Assets\Scripts\deni\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Interactions.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\DEMO-01\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\DEMO-01\Scripts\MoveCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

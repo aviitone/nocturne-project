@@ -1,23 +1,14 @@
 // Some stupid rigidbody based movement by Dani
+// thanks dani :3 - Arii
 
 using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    //dani's code for reference
-
-    //Camera but Better
-    public float sensX;
-    public float sensY;
-
-    Transform orientation;
-
-    float rotX;
-    float rotY;
-
     //Assingables
     public Transform playerCam;
+    public Transform orientation;
     
     //Other
     private Rigidbody rb;
@@ -73,6 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         MyInput();
+        Look();
     }
 
     /// <summary>
@@ -177,20 +169,20 @@ public class PlayerMovement : MonoBehaviour {
     
     private float desiredX;
     private void Look() {
-        //getting mouse input
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.fixedDeltaTime * sensY;
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.fixedDeltaTime * sensX;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
 
-        rotY += mouseX;
-        rotX -= mouseY;
+        //Find current look rotation
+        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
+        desiredX = rot.y + mouseX;
+        
+        //Rotate, and also make sure we dont over- or under-rotate.
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        //preventing camera from going too far (aka "clamping")
-        rotX = Mathf.Clamp(rotX, -90f, 90f);
-
-        // rotating player/head
-        transform.rotation = Quaternion.Euler(rotX, rotY, 0);
-        orientation.rotation = Quaternion.Euler(0, rotY, 0);
-
+        //Perform the rotations
+        playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, 0);
+        orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
     }
 
     private void CounterMovement(float x, float y, Vector2 mag) {
@@ -218,6 +210,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    /// <summary>
     /// Find the velocity relative to where the player is looking
     /// Useful for vectors calculations regarding movement and limiting movement
     /// </summary>

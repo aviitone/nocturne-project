@@ -8,3 +8,5 @@ public class MoveCamera : MonoBehaviour {
         transform.position = player.transform.position;
     }
 }
+
+//yeah boi :)
