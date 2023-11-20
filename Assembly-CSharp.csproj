@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Portals\PortalCamera.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-    <Compile Include="Assets\Scripts\PickupScript.cs" />
     <Compile Include="Assets\PortalTeleport.cs" />
     <Compile Include="Assets\Scripts\ObjectGrabber.cs" />
     <Compile Include="Assets\Scripts\Interacts\InteractionSystem2\Interactions\MoistDoor.cs" />
